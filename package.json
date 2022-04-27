@@ -1,0 +1,51 @@
+{
+  "name": "cempa",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve --open",
+    "build": "ng build --base-href /cempa-test/",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "deploy": "gh-pages --dist 'dist' --branch 'page'"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "~12.1.2",
+    "@angular/cdk": "^13.3.2",
+    "@angular/common": "~12.1.2",
+    "@angular/compiler": "~12.1.2",
+    "@angular/core": "~12.1.2",
+    "@angular/forms": "~12.1.2",
+    "@angular/platform-browser": "~12.1.2",
+    "@angular/platform-browser-dynamic": "~12.1.2",
+    "@angular/router": "~12.1.2",
+    "chart.js": "^3.6.0",
+    "moment": "^2.29.2",
+    "ng2-charts": "^3.0.8",
+    "ol": "^6.12.0",
+    "ol-ext": "^3.2.21",
+    "ol-wind": "^1.1.1-alpha.2",
+    "primeicons": "^5.0.0",
+    "primeng": "^13.1.0",
+    "proj4": "^2.8.0",
+    "rxjs": "~6.6.0",
+    "tslib": "^2.2.0",
+    "zone.js": "~0.11.4"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~12.1.2",
+    "@angular/cli": "~12.1.2",
+    "@angular/compiler-cli": "~12.1.2",
+    "@types/jasmine": "~3.8.0",
+    "@types/node": "^12.11.1",
+    "gh-pages": "^3.2.3",
+    "jasmine-core": "~3.8.0",
+    "karma": "~6.3.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage": "~2.0.3",
+    "karma-jasmine": "~4.0.0",
+    "karma-jasmine-html-reporter": "~1.7.0",
+    "typescript": "~4.3.2"
+  }
+}
