@@ -1,17 +1,20 @@
-<h2>Aplicação de Testes</h2>
+<h2>CEMPA TESTING APPLICATION - STATIC IMAGES</h2>
 <main>
   <div id="ol-map" class="map-container">
+    <div class="layers">
+      {{selectedGroupLayers.slice(0 , -1) }}
+      <p-dropdown [options]="groupLayers" [(ngModel)]="selectedGroupLayers" optionLabel="label" optionValue="value" (onChange)="onChange($event)"></p-dropdown>
+    </div>
     <div class="img-legend">
       <span>
-        <img [src]="'https://cempadev.lapig.iesa.ufg.br/service/colorbar/' +layersMapserver[date]+ '.png'">
+        <img [src]="'https://cempadev.lapig.iesa.ufg.br/service/static/bar/' +getDateOnly(selectedLayersMap[date])+ '.png'">
       </span>
     </div>
   </div>
-
 </main>
-<h5>Data: {{formatDate(layersMapserver[date]) | date:'dd/MM/yyyy HH:mm'}}</h5>
+<h5 *ngIf="selectedGroupLayers">Data: {{formatDate(selectedLayersMap[date]) | date:'dd/MM/yyyy HH:mm'}}</h5>
 <div class="slider">
-  <p-slider [(ngModel)]="date" (onChange)="onDateChange($event)" [min]="0" [max]="layersMapserver.length - 1"></p-slider>
+  <p-slider [(ngModel)]="date" (onChange)="onDateChange($event)" [min]="0" [max]="selectedLayersMap.length - 1"></p-slider>
 </div>
 
 <div class="controls">
@@ -19,12 +22,6 @@
   <button pButton pRipple  (click)="stop()" type="button" icon="pi pi-stop" class="p-button-rounded p-button-danger"></button>
 </div>
 
-<p-dialog header="Gráfico de Temperaturas | Lat: {{coordinate[1] | number:'2.1-5'}} | Lon: {{coordinate[0] | number:'2.1-5'}}" [(visible)]="display" [style]="{width: '75%'}">
-  <canvas *ngIf="serie.length > 0"
-    baseChart
-    [data]="serieData"
-    [type]="'line'"
-    [options]="chartOptions"
-  >
-</canvas>
+<p-dialog header="Ponto Selecionado" [(visible)]="display">
+  <h4>{{coordinate}}</h4>
 </p-dialog>

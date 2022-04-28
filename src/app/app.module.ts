@@ -10,6 +10,8 @@ import {ButtonModule} from 'primeng/button';
 import { HttpClientModule } from '@angular/common/http';
 import { NgChartsModule } from 'ng2-charts';
 import {DialogModule} from 'primeng/dialog';
+import {DropdownModule} from 'primeng/dropdown';
+import {ListboxModule} from 'primeng/listbox';
 @NgModule({
   declarations: [
     AppComponent
@@ -24,7 +26,9 @@ import {DialogModule} from 'primeng/dialog';
     FormsModule,
     ButtonModule,
     NgChartsModule,
-    DialogModule
+    DialogModule,
+    DropdownModule,
+    ListboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
